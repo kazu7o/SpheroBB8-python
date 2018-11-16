@@ -7,7 +7,7 @@ import threading
 import time
 from bluepy import btle
 
-MAC_ADDR = 'EB:72:B0:40:92:AF'
+MAC_ADDR = 'C9:3A:11:E4:14:D3'
 
 # These are the message response code that can be return by Sphero.
 MRSP = dict(
