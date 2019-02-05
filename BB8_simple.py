@@ -13,14 +13,16 @@ SLOW = 50
 VERY_SLOW = 32
 SLOWEST = 8
 
+SOUND = False
 
 class BB8Controller(object):
     """Simplified controller for BB-8"""
 
     def __init__(self):
-        #pygame.mixer.init()
-        #pygame.mixer.music.load('sounds/connect.mp3')
-        #pygame.mixer.music.play()
+        if SOUND == True:
+            pygame.mixer.init()
+            pygame.mixer.music.load('sounds/connect.mp3')
+            pygame.mixer.music.play()
 
         self.bb8 = BB8_driver.Sphero()
         self.bb8.connect()
@@ -57,8 +59,9 @@ class BB8Controller(object):
     def turn_right(self):
         """Turn sphero right"""
 
-        #pygame.mixer.music.load('sounds/turn.mp3')
-        #pygame.mixer.music.play()
+        if SOUND == True:
+            pygame.mixer.music.load('sounds/turn.mp3')
+            pygame.mixer.music.play()
         time.sleep(1)
         
         for _ in xrange(5):
@@ -69,8 +72,9 @@ class BB8Controller(object):
     def turn_left(self):
         """Turn sphero left"""
 
-        #pygame.mixer.music.load('sounds/turn.mp3')
-        #pygame.mixer.music.play()
+        if SOUND == True:
+            pygame.mixer.music.load('sounds/turn.mp3')
+            pygame.mixer.music.play()
         time.sleep(1)
 
         for _ in xrange(5):
@@ -81,8 +85,9 @@ class BB8Controller(object):
     def displace(self, speed, direction, duration):
         """Move and stop"""
 
-        #pygame.mixer.music.load('sounds/roll.mp3')
-        #pygame.mixer.music.play()
+        if SOUND == True:
+            pygame.mixer.music.load('sounds/roll.mp3')
+            pygame.mixer.music.play()
 
         self.bb8.roll(speed, direction, 1, True)
         time.sleep(duration)
@@ -115,10 +120,15 @@ class BB8Controller(object):
         """Move left"""
         self.displace(speed, 270, duration)
 
+    def go(self, direction, speed=FAST, duration=0):
+        self.displace(speed, direction, duration)
+
     def disconnect(self):
         """Disconnect from BB-8"""
-        #pygame.mixer.music.load('sounds/disconnect.mp3')
-        #pygame.mixer.music.play()
+
+        if SOUND == True:
+            pygame.mixer.music.load('sounds/disconnect.mp3')
+            pygame.mixer.music.play()
 
         self.bb8.disconnect()
         time.sleep(2)

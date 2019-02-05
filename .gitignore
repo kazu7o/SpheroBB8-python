@@ -10,3 +10,8 @@ __pycache__/
 
 # Sound files
 sounds/
+
+lib/
+bin/
+local/
+include/
