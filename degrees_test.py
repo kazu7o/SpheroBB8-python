@@ -7,8 +7,6 @@ import camera
 import cv2
 import math
 
-# BB8 Controller
-bb8 = BB8_simple.BB8Controller()
 #
 # 角度計算
 def get_degrees(ball_x, ball_y, bb8_x, bb8_y):
@@ -18,6 +16,9 @@ def get_degrees(ball_x, ball_y, bb8_x, bb8_y):
 
 # Main Process
 if __name__ == '__main__':
+
+    # BB8 Controller
+    bb8 = BB8_simple.BB8Controller()
 
     #cap = cv2.VideoCapture("http://127.0.0.1:8081/")
     #frame = cap.read()[1]

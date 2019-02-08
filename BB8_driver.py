@@ -8,9 +8,12 @@ import time
 from bluepy import btle
 
 # Team A
-#MAC_ADDR = "C9:3A:11:E4:14:D3"
+MAC_ADDR = 'C9:3A:11:E4:14:D3'
 # Team B
-MAC_ADDR = 'DA:0C:EB:13:3A:35'
+#MAC_ADDR = 'DA:0C:EB:13:3A:35'
+# Unknown
+#MAC_ADDR = 'D2:89:4C:BC:6B:3F'
+
 
 # These are the message response code that can be return by Sphero.
 MRSP = dict(
